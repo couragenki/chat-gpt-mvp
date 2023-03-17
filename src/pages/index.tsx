@@ -2,15 +2,18 @@ import Head from 'next/head'
 import styles from './Top.module.scss'
 import Button from "@mui/material/Button";
 import Header from '@/components/Header';
+import Link from 'next/link';
 
-export default function Home() {
+export default function TOP() {
   return (
     <>
       <Head>
-        <title>Home</title>
+        <title>TOP</title>
       </Head>
       <Header />
-      <Button variant="contained">Hello World</Button>
+      <Link href="/apps/1">
+        <Button variant="contained">APP1へ</Button>
+      </Link>
       <main className={styles.main}></main>
     </>
   );
