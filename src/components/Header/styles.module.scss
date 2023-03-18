@@ -1,4 +1,27 @@
 @import "../../styles/valiables";
 .headerComponent {
-  background-color: goldenrod;
+  .header {
+    max-width: $pcmaxwidth;
+    height: 90px;
+    margin: 0 auto;
+    display: flex;
+    .logo {
+      width: 300px;
+      height: 100%;
+      background-color: rgb(55, 55, 191);
+      .title {
+        color: azure;
+      }
+    }
+    .links {
+      display: flex;
+      .link {
+        width: 100px;
+        display: inline-block;
+        .text {
+          color: black;
+        }
+      }
+    }
+  }
 }

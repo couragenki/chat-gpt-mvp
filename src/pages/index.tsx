@@ -1,15 +1,10 @@
-import Head from 'next/head'
 import styles from './Top.module.scss'
-import Header from '@/components/Header';
+import { PageTemplate } from '@/components/pageTemplate';
 
-export default function TOP() {
+export default function TOPPAGE() {
   return (
-    <>
-      <Head>
-        <title>TOP PAGE</title>
-      </Head>
-      <Header />
-      <main className={styles.topPage}>
+    <div className={styles.topPage}>
+      <PageTemplate>
         <p>このサイトではChat-GPTの活用事例を掲載しています</p>
         <section>
           <div>Chat-GPT x 学習</div>
@@ -38,7 +33,7 @@ export default function TOP() {
             <li>hoge</li>
           </ul>
         </section>
-      </main>
-    </>
+      </PageTemplate>
+    </div>
   );
 }

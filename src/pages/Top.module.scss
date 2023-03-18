@@ -1,4 +1,9 @@
+@import "../styles/valiables";
 .topPage {
-  min-height: 100vh;
   background-color: aliceblue;
+  .mian {
+    max-width: $pcmaxwidth;
+    margin: 0 auto;
+    min-height: 100vh;
+  }
 }
