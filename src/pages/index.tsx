@@ -1,5 +1,6 @@
 import styles from './Top.module.scss'
 import { PageTemplate } from '@/components/pageTemplate';
+import React from 'react';
 
 export default function TOPPAGE() {
   return (
