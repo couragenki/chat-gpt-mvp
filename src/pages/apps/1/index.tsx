@@ -7,7 +7,7 @@ export default function App1() {
   return (
     <div className={styles.app1}>
       <PageTemplate>
-        <div>APP 1</div>
+        <div>自由にチャットで質問ができます</div>
         <Chat />
       </PageTemplate>
     </div>

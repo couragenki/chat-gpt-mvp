@@ -18,18 +18,8 @@ export default function Header() {
               </Link>
             </li>
             <li className={styles.link}>
-              <Link className={styles.text} href="/apps/1">
-                APP1へ
-              </Link>
-            </li>
-            <li className={styles.link}>
-              <Link className={styles.text} href="/apps/1">
-                APP1へ
-              </Link>
-            </li>
-            <li className={styles.link}>
-              <Link className={styles.text} href="/apps/1">
-                APP1へ
+              <Link className={styles.text} href="/apps/2">
+                APP2へ
               </Link>
             </li>
           </ul>

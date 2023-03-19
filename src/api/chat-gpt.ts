@@ -1,36 +1,14 @@
-import axios from "axios";
+import React from "react";
 
-const API_URL = "https://api.openai.com/v1/";
-const MODEL = "gpt-3.5-turbo";
-const API_KEY = "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";
-
-export const chat = async (message: string) => {
-  try {
-    const response = await axios.post(
-      `${API_URL}chat/completions`,
-      {
-        // モデル ID の指定
-        model: MODEL,
-        // 質問内容
-        messages: [
-          {
-            role: "user",
-            content: message,
-          },
-        ],
-      },
-      {
-        // 送信する HTTP ヘッダー(認証情報)
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${API_KEY}`,
-        },
-      }
-    );
-    // 回答の取得
-    return response.data.choices[0].message.content;
-  } catch (error) {
-    console.error(error);
-    return null;
-  }
+const url = "https://api.github.com/repos/zeit/next.js";
+const TestApi = () => {
+  const [stars, setStars] = React.useState(0);
+  React.useEffect(() => {
+    fetch(url)
+      .then((r) => r.json())
+      .then((j) => setStars(j.stargazers_count));
+  }, []);
+  return stars;
 };
+
+export default TestApi;
