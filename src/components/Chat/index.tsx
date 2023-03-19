@@ -41,7 +41,7 @@ const Chat = () => {
 
   // フォーム送信時の処理
   const handleSubmit = useCallback(
-    async (event:any) => {
+    async (event: React.FormEvent<HTMLFormElement>) => {
       event.preventDefault();
 
       // フォームが空のとき
@@ -94,8 +94,8 @@ const Chat = () => {
   );
 
   interface ChatProps {
-    prevMessage: any;
-    answer:any
+    prevMessage: string;
+    answer: string
   }
   // チャット内容
   const ChatContent:React.FC<ChatProps> = React.memo(({ prevMessage, answer }) => {
