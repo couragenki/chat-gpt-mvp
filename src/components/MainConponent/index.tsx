@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './styles.module.scss'
 import { ReactNode } from 'react';
+import { Container } from '@mui/material';
 
 type Props = {
   children: ReactNode;
@@ -9,7 +10,7 @@ type Props = {
 export const MainConponent: React.FC<Props> = (props) => {
   return (
     <div className={styles.mainComponent}>
-      <div className={styles.content}>{props.children}</div>
+      <Container maxWidth="md">{props.children}</Container>
     </div>
   );
 }
