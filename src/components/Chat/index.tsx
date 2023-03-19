@@ -108,7 +108,7 @@ const Chat = () => {
         <div className="current-answer">
           <h2>回答:</h2>
           <p>
-            {answer.split(/\n/).map((item, index) => {
+            {answer.split(/\n/).map((item:React.ReactNode, index:React.Key) => {
               return (
                 <React.Fragment key={index}>
                   {item}
