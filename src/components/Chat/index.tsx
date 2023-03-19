@@ -10,7 +10,9 @@ const Chat = () => {
   // 回答の状態管理用のステート
   const [answer, setAnswer] = useState("");
   // 会話の記録用のステート
-  const [conversation, setConversation] = useState([]);
+  const [conversation, setConversation] = useState<
+    { role: string; content: string }[]
+  >([]);
   // ローディング表示用のステート
   const [loading, setLoading] = useState(false);
   // 前回のメッセージの保持、比較用
@@ -39,7 +41,7 @@ const Chat = () => {
 
   // フォーム送信時の処理
   const handleSubmit = useCallback(
-    async (event) => {
+    async (event:any) => {
       event.preventDefault();
 
       // フォームが空のとき
@@ -91,8 +93,12 @@ const Chat = () => {
     [loading, message, conversation]
   );
 
+  interface ChatProps {
+    prevMessage: any;
+    answer:any
+  }
   // チャット内容
-  const ChatContent = React.memo(({ prevMessage, answer }) => {
+  const ChatContent:React.FC<ChatProps> = React.memo(({ prevMessage, answer }) => {
     return (
       <div className="result">
         <div className="current-message">
@@ -115,6 +121,9 @@ const Chat = () => {
       </div>
     );
   });
+
+  ChatContent.displayName = "ChatContent";
+  
 
   // フォームの表示
   return (
