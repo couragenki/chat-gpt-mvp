@@ -3,4 +3,8 @@
   max-width: 1280px;
   min-height: 100vh;
   margin: 0 auto;
+  .content {
+    max-width: $pccontent;
+    margin: 0 auto;
+  }
 }
